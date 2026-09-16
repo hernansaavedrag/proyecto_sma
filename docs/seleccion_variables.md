@@ -48,3 +48,20 @@ Dataset: `data/raw/Sancionatorios.xlsx` (3.537 filas, 19 columnas). Clasificaci�
 
 \- \*\*FechaActualizacion\*\*: es la misma fecha (12-09-2026) en las 3.537 filas — un metadato del snapshot completo del dataset, no una variable que varíe por registro. No aporta información para diferenciar casos.
 
+## Criterios para la selección de variables
+
+| Variable | Rol | Decisión | Justificación |
+|---|---|---|---|
+| MultaTotalUTA | Variable objetivo | Utilizar | Representa la magnitud de la sanción económica medida en UTA. |
+| RegionNombre | Explicativa territorial | Utilizar | Permite estudiar diferencias territoriales en la magnitud de las multas. |
+| ComunaNombre | Explicativa territorial | Evaluar | Presenta mayor cardinalidad y deberá evaluarse su utilidad según el análisis posterior. |
+| CategoriaEconomicaNombre | Explicativa económica | Utilizar | Permite comparar la magnitud de las multas entre actividades económicas. |
+| SubCategoriaEconomicaNombre | Explicativa económica | Evaluar | Aporta mayor detalle, pero presenta mayor cardinalidad. |
+| ProcesoSancionTipoNombre | Explicativa administrativa | Utilizar | Identifica el origen o tipo del procedimiento sancionatorio. |
+| DuracionDias | Explicativa temporal | Utilizar | Permite estudiar una posible asociación entre duración del procedimiento y magnitud de la multa. |
+| ProcesoSancionId | Identificación | No utilizar como predictor | Identifica procedimientos y permite revisar registros repetidos. |
+| Expediente | Identificación | No utilizar como predictor | Permite mantener trazabilidad con el procedimiento administrativo. |
+| LinkSNIFA | Trazabilidad | No utilizar como predictor | Corresponde a un enlace de consulta y no a una característica explicativa. |
+| LinkSNIFA_UF | Trazabilidad | No utilizar como predictor | Corresponde a un enlace asociado a la unidad fiscalizable. |
+
+La exclusión de una variable del modelamiento no implica necesariamente eliminarla del conjunto procesado. Las variables de identificación y trazabilidad pueden conservarse para revisar y relacionar los registros con la fuente institucional, aunque no sean utilizadas como predictores.
