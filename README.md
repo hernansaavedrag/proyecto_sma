@@ -14,6 +14,7 @@ El proyecto utiliza el conjunto de datos de procedimientos sancionatorios public
 
 - **Archivo:** `Sancionatorios.xlsx`
 - **Fecha de descarga:** 09 de septiembre de 2026
+- **Hora de descarga:** 10:00 hrs
 - **Ubicación:** `data/raw/Sancionatorios.xlsx`
 - **Estado:** copia original sin modificaciones
 - **Fuente:** Superintendencia del Medio Ambiente (SMA)
