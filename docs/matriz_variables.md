@@ -52,3 +52,21 @@ Las variables de identificación y trazabilidad pueden conservarse porque permit
 
 La selección de variables para modelamiento constituye una operación distinta de la conservación de información en el dataset procesado.
 
+
+
+
+
+\## Variables y unidad de análisis
+
+
+
+La selección definitiva de variables dependerá también de la unidad de análisis adoptada.
+
+
+
+Si el análisis se realiza a nivel de procedimiento, deberá verificarse qué variables permanecen constantes para cada ProcesoSancionId y cómo representar aquellas asociadas a múltiples unidades fiscalizables.
+
+
+
+Por esta razón, la matriz presentada corresponde a una selección preliminar para etapas posteriores y no implica una eliminación física de columnas del conjunto procesado.
+
