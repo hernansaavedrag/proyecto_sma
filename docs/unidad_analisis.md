@@ -80,3 +80,11 @@ De esta manera se distingue entre:
 
 La transformación entre ambos niveles deberá documentarse explícitamente y no se eliminarán filas del conjunto original `data/raw/Sancionatorios.xlsx`.
 
+
+## Criterio para etapas posteriores
+
+La existencia de procedimientos repetidos a nivel de fila se considera una característica estructural relevante del conjunto de datos y no un error que deba corregirse mediante eliminación automática de duplicados.
+
+Para futuras etapas de análisis o modelamiento se deberá comparar explícitamente el número de registros con el número de procedimientos únicos y definir el nivel de observación apropiado según la pregunta analítica.
+
+Esta decisión permite evitar dos errores metodológicos: eliminar información válida asociada a distintas unidades fiscalizables o contabilizar repetidamente una misma multa cuando el análisis requiera trabajar a nivel de procedimiento.
