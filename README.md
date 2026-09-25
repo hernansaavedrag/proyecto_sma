@@ -35,6 +35,7 @@ Los 110 registros sin valor informado de multa no son interpretados como multas 
 
 - `F1/`: definición del problema, objetivos, alcance, entorno y reconocimiento inicial del conjunto de datos.
 - `F2/`: exploración, procesamiento, transformación y validación.
+- `F3/`: diseño, implementación y evaluación experimental de algoritmos.
 - `data/raw/`: copia original del conjunto de datos sin modificaciones.
 - `data/processed/`: datos resultantes del procesamiento.
 - `src/`: funciones y módulos reutilizables.
@@ -56,11 +57,55 @@ Documenta la definición del problema, objetivos, alcance, configuración del en
 
 Documenta las decisiones de procesamiento, definición del universo analítico, tratamiento de valores ausentes, conversión de variables, normalización de categorías, análisis de valores potencialmente atípicos y validaciones del conjunto procesado.
 
+### Fase 3
+
+`F3/F3_Algoritmos_Complejidad.ipynb`
+
+Documenta el diseño, implementación y evaluación experimental de los algoritmos desarrollados para el análisis del conjunto de datos.
+
+La Fase 3 complementa el análisis realizado en las etapas anteriores mediante la evaluación de diferentes estrategias de implementación, considerando:
+
+- eficiencia temporal;
+- consumo de memoria;
+- claridad y modularidad del código;
+- reutilización de funciones y módulos;
+- comparación de distintas estrategias algorítmicas.
+
 ### Dataset procesado
 
 `data/processed/sancionatorios_procesados.csv`
 
 Resultado reproducible de las transformaciones y criterios documentados en la Fase 2. El archivo contiene 984 registros y 20 variables.
+
+## Algoritmos y módulos
+
+La lógica de procesamiento se encuentra separada en módulos Python ubicados en `src/`.
+
+- `src/procesamiento.py`: funciones relacionadas con la preparación y transformación de los datos.
+- `src/algoritmos.py`: funciones correspondientes a los algoritmos desarrollados para el análisis.
+- `src/mediciones.py`: funciones utilizadas para medir tiempos de ejecución y consumo de memoria.
+- `src/normalizacion_regiones.py`: implementación de la normalización de `RegionNombre`.
+- `src/comparar_normalizacion_regiones.py`: comparación experimental entre las implementaciones iterativa y vectorizada.
+
+Esta organización permite separar la lógica de procesamiento, los algoritmos y las funciones de medición, favoreciendo la reutilización, trazabilidad y mantenimiento del código.
+
+## Evaluación experimental
+
+La Fase 3 incorpora mediciones experimentales para complementar el análisis teórico de complejidad.
+
+Las mediciones de tiempo se realizan mediante `time.perf_counter()` y las mediciones de memoria mediante `tracemalloc`.
+
+Se realizaron las siguientes comparaciones:
+
+1. Construcción del universo analítico y cálculo de duración de procedimientos.
+2. Comparación entre programación estructurada y programación recursiva.
+3. Comparación experimental entre una implementación iterativa y una implementación recursiva.
+4. Comparación entre una implementación iterativa y una implementación vectorizada mediante Pandas para la normalización de `RegionNombre`.
+5. Evaluación utilizando distintos tamaños de entrada.
+
+Las comparaciones funcionales fueron verificadas mediante `assert` y mediante la comparación con resultados obtenidos durante la Fase 2.
+
+Los resultados experimentales se interpretan considerando las condiciones específicas de ejecución, el tamaño del conjunto de datos y las características de las implementaciones utilizadas.
 
 ## Reproducibilidad del entorno
 
