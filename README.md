@@ -79,32 +79,105 @@ Resultado reproducible de las transformaciones y criterios documentados en la Fa
 
 ## Algoritmos y módulos
 
-La lógica de procesamiento se encuentra separada en módulos Python ubicados en `src/`.
+La lógica de la Fase 3 se encuentra separada en módulos Python ubicados en `src/`,
+siguiendo una separación de responsabilidades entre procesamiento, normalización,
+medición y validación.
 
-- `src/procesamiento.py`: funciones relacionadas con la preparación y transformación de los datos.
-- `src/mediciones.py`: funciones utilizadas para medir tiempos de ejecución y consumo de memoria.
-- `src/normalizacion_regiones.py`: implementación de la normalización de `RegionNombre`.
-- `src/comparar_normalizacion_regiones.py`: comparación experimental entre las implementaciones iterativa y vectorizada.
+- `src/procesamiento.py`: funciones relacionadas con la preparación y transformación
+  de los datos y la construcción del universo analítico.
+- `src/mediciones.py`: funciones utilizadas para medir tiempo de ejecución y consumo
+  de memoria.
+- `src/validaciones.py`: funciones destinadas a verificar la consistencia y
+  equivalencia de los resultados.
+- `src/verificar_dataset.py`: controles básicos sobre el dataset procesado.
+- `src/normalizacion_regiones.py`: implementaciones iterativa y vectorizada para
+  normalizar la variable `RegionNombre`.
+- `src/normalizacion_poo.py`: implementación de la normalización mediante
+  programación orientada a objetos.
+- `src/comparar_normalizacion_regiones.py`: comparación experimental de las
+  implementaciones iterativa y vectorizada.
 
-Esta organización permite separar la lógica de procesamiento, los algoritmos y las funciones de medición, favoreciendo la reutilización, trazabilidad y mantenimiento del código.
+Esta separación permite que cada módulo tenga una responsabilidad específica.
+El notebook coordina el análisis, mientras que las funciones reutilizables se
+mantienen fuera del notebook.
+
+La organización permite modificar o incorporar una estrategia algorítmica sin
+tener que modificar el procesamiento, las mediciones o las validaciones del
+proyecto.
 
 ## Evaluación experimental
 
-La Fase 3 incorpora mediciones experimentales para complementar el análisis teórico de complejidad.
+La Fase 3 incorpora mediciones experimentales para complementar el análisis
+teórico de complejidad.
 
-Las mediciones de tiempo se realizan mediante `time.perf_counter()` y las mediciones de memoria mediante `tracemalloc`.
+Las mediciones de tiempo se realizan mediante `time.perf_counter()` y las
+mediciones de memoria mediante `tracemalloc`.
 
-Se realizaron las siguientes comparaciones:
+Se realizaron las siguientes evaluaciones:
 
-1. Construcción del universo analítico y cálculo de duración de procedimientos.
-2. Comparación entre programación estructurada y programación recursiva.
-3. Comparación experimental entre una implementación iterativa y una implementación recursiva.
-4. Comparación entre una implementación iterativa y una implementación vectorizada mediante Pandas para la normalización de `RegionNombre`.
-5. Evaluación utilizando distintos tamaños de entrada.
+1. Construcción del universo analítico y cálculo de duración de los procedimientos.
+2. Comparación entre una implementación iterativa y una implementación vectorizada
+   mediante Pandas para la normalización de `RegionNombre`.
+3. Evaluación de las implementaciones utilizando distintos tamaños de entrada.
+4. Comparación del consumo de tiempo y memoria entre las estrategias.
 
-Las comparaciones funcionales fueron verificadas mediante `assert` y mediante la comparación con resultados obtenidos durante la Fase 2.
+La equivalencia funcional de las implementaciones fue verificada mediante `assert`
+y mediante la comparación con los resultados obtenidos durante la Fase 2.
 
-Los resultados experimentales se interpretan considerando las condiciones específicas de ejecución, el tamaño del conjunto de datos y las características de las implementaciones utilizadas.
+La evaluación de la recursividad se realizó como parte del análisis de alternativas
+algorítmicas. Sin embargo, el problema de los procedimientos sancionatorios no
+presenta una estructura jerárquica o una dependencia entre registros que justifique
+su utilización como estrategia principal. Por esta razón, la solución del proyecto
+prioriza las implementaciones iterativa y vectorizada, que son coherentes con la
+naturaleza tabular del conjunto de datos.
+
+Los resultados experimentales se interpretan considerando las condiciones
+específicas de ejecución, el tamaño del conjunto de datos y las características
+de las implementaciones utilizadas.
+
+## Criterios de optimización
+
+La evaluación de las estrategias considera los siguientes criterios:
+
+- **Tiempo de ejecución:** comparación de los tiempos obtenidos para distintos
+  tamaños de entrada.
+- **Consumo de memoria:** medición del uso de memoria durante la ejecución.
+- **Escalabilidad:** análisis del comportamiento de las estrategias al aumentar
+  el número de registros.
+- **Modularidad:** separación de responsabilidades para facilitar el mantenimiento
+  y extensión del proyecto.
+- **Reutilización:** utilización de funciones independientes en diferentes
+  evaluaciones.
+- **Reproducibilidad:** ejecución de las comparaciones bajo los mismos datos y
+  criterios de medición.
+
+Los resultados mostraron que para el conjunto inicial de 984 registros la
+implementación iterativa presentó un menor tiempo de ejecución. Al aumentar el
+tamaño de entrada a 3.936 y 15.744 registros, la implementación vectorizada
+presentó menores tiempos.
+
+Este comportamiento puede explicarse por el costo fijo asociado a las operaciones
+de Pandas. En conjuntos pequeños, dicho costo puede representar una proporción
+importante del tiempo total. Al aumentar el volumen de datos, las operaciones
+vectorizadas permiten procesar los datos mediante operaciones internas optimizadas,
+reduciendo el costo relativo de recorrer los registros individualmente.
+
+En términos de memoria, la implementación iterativa presentó un menor consumo
+máximo en las tres pruebas realizadas. Por ello, la evaluación de eficiencia
+considera conjuntamente tiempo de ejecución, consumo de memoria y comportamiento
+frente al aumento del tamaño de entrada.
+
+## Arquitectura y proyección
+
+La arquitectura mantiene separados el procesamiento de datos, las estrategias
+algorítmicas, las mediciones y las validaciones.
+
+Esta organización reduce el acoplamiento entre los componentes y permite incorporar
+nuevas estrategias de análisis sin modificar completamente el flujo existente.
+
+La estructura desarrollada constituye una base para la Fase 4, ya que permite
+incorporar nuevos algoritmos o análisis utilizando las funciones de procesamiento,
+medición y validación existentes.
 
 ## Reproducibilidad del entorno
 
