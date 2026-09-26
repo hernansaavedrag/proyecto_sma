@@ -82,7 +82,6 @@ Resultado reproducible de las transformaciones y criterios documentados en la Fa
 La lógica de procesamiento se encuentra separada en módulos Python ubicados en `src/`.
 
 - `src/procesamiento.py`: funciones relacionadas con la preparación y transformación de los datos.
-- `src/algoritmos.py`: funciones correspondientes a los algoritmos desarrollados para el análisis.
 - `src/mediciones.py`: funciones utilizadas para medir tiempos de ejecución y consumo de memoria.
 - `src/normalizacion_regiones.py`: implementación de la normalización de `RegionNombre`.
 - `src/comparar_normalizacion_regiones.py`: comparación experimental entre las implementaciones iterativa y vectorizada.

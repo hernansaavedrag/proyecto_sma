@@ -17,7 +17,6 @@ F3/
 └── F3_Algoritmos_Complejidad.ipynb
 
 src/
-├── algoritmos.py
 ├── mediciones.py
 ├── procesamiento.py
 ├── validaciones.py
@@ -28,10 +27,6 @@ procesamiento.py
 Contiene funciones relacionadas con la preparación y transformación de los datos.
 
 Entre ellas se encuentra la construcción del universo analítico y el cálculo de la duración de los procesos.
-
-algoritmos.py
-
-Contiene funciones destinadas al desarrollo y comparación de estrategias algorítmicas.
 
 mediciones.py
 
