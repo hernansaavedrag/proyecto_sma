@@ -3,14 +3,21 @@ import pandas as pd
 
 def construir_universo_analitico(df):
     """
-    Construye el universo analítico considerando unidades fiscalizables únicas.
+    Construye el universo analítico a nivel de procedimiento sancionatorio.
+
+    Un mismo ProcesoSancionId puede aparecer en varias filas (una por unidad
+    fiscalizable) con la misma multa. Agrupar por procedimiento evita contar
+    esa multa más de una vez (ver docs/unidad_analisis.md).
     """
-    
+    multas_por_proceso = df.groupby("ProcesoSancionId")["MultaTotalUTA"].nunique()
+    if (multas_por_proceso > 1).any():
+        raise ValueError("Hay procedimientos con más de un valor de MultaTotalUTA")
+
     universo = (
-        df.groupby("UnidadFiscalizableId")
+        df.groupby("ProcesoSancionId")
         .agg(
-            cantidad_procesos=("ProcesoSancionId", "count"),
-            multa_total=("MultaTotalUTA", "sum")
+            cantidad_unidades=("UnidadFiscalizableId", "nunique"),
+            multa_total=("MultaTotalUTA", "first")
         )
         .reset_index()
     )
