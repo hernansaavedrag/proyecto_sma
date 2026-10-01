@@ -72,6 +72,16 @@ El conjunto procesado contiene registros donde un mismo `ProcesoSancionId` puede
 
 Esta situación deberá evaluarse antes del análisis inferencial para evitar que procedimientos asociados a múltiples unidades tengan una representación desproporcionada.
 
+
+### Unidad utilizada en la agregación de Fase 3
+
+En la Fase 3, la función `construir_universo_analitico()` agrupa los registros mediante `UnidadFiscalizableId`. Esta elección responde al objetivo específico del algoritmo, que consiste en resumir por unidad fiscalizable la cantidad de procedimientos y el monto total de las multas asociadas.
+
+Esta agregación no redefine la unidad de análisis para todas las preguntas del proyecto. En particular, cuando el análisis busque estudiar factores asociados a la magnitud de una multa por procedimiento sancionatorio, se deberá utilizar una vista consolidada a nivel de `ProcesoSancionId`, verificando previamente la consistencia de las variables asociadas.
+
+La distinción es relevante porque un mismo procedimiento sancionatorio puede estar asociado a más de una unidad fiscalizable. Por ello, la representación por unidad fiscalizable es adecuada para describir la distribución de procesos y multas entre unidades, mientras que un análisis centrado en el procedimiento debe evitar contabilizar repetidamente una misma multa.
+
+
 ## Reproducibilidad, trazabilidad y documentación
 
 En este proyecto se distinguen tres conceptos complementarios que cumplen funciones diferentes dentro del flujo de trabajo científico.
