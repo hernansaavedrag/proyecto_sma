@@ -1,7 +1,7 @@
 """
 Funciones de validación para el proyecto SMA.
 """
-
+import pandas as pd
 
 def validar_multas_no_negativas(df):
     """Verifica que MultaTotalUTA no contenga valores negativos."""
@@ -45,3 +45,17 @@ def validar_universo_analitico(df):
 
     return estados_validos and multas_informadas
 
+def validar_fechas_consistentes(df):
+    """
+    Verifica que FechaTermino no sea anterior a FechaInicio.
+    """
+    inicio = pd.to_datetime(df["FechaInicio"], errors="coerce")
+    termino = pd.to_datetime(df["FechaTermino"], errors="coerce")
+
+    if inicio.isna().any() or termino.isna().any():
+        raise ValueError("Existen fechas inválidas o ausentes.")
+
+    if (termino < inicio).any():
+        raise ValueError("FechaTermino no puede ser anterior a FechaInicio.")
+
+    return True
