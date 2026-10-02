@@ -80,8 +80,8 @@ demás solo como referencia, indicando siempre su `n`.
 
 ## Interpretación
 
-Descriptivamente, el rubro económico es el factor en que más se separan las magnitudes de multa dentro de
-este universo. Los procedimientos de Minería y Energía se concentran en montos mucho mayores que los de
+Descriptivamente, el rubro económico es la variable analizada que muestra mayores diferencias en las
+magnitudes de multa dentro de este universo. Los procedimientos de Minería y Energía se concentran en montos mucho mayores que los de
 Equipamiento, Forestal u Otras categorías, y esa separación se mantiene aunque se mire la mediana en lugar
 del promedio y aunque se dejen fuera los valores extremos. El contraste con las otras secciones del notebook
 ayuda a dimensionarlo: entre regiones las medianas van de 2,3 a 17,15 UTA, y entre Denuncia y Fiscalización
@@ -110,10 +110,3 @@ Además:
   heterogéneas.
 - Los resultados corresponden al universo analítico definido en el proyecto (procedimientos terminados con
   multa informada) y no necesariamente se extienden a procedimientos abiertos o sin multa.
-
-## Observación para revisión del notebook
-
-En la sección 10 (Síntesis de resultados), la mediana de Minería aparece como **443,5 UTA**, pero la tabla
-`resumen_rubro` muestra **443,0 UTA**. Con n = 40 la mediana es el promedio de los valores 20.º y 21.º
-(398 y 488 UTA), es decir, 443,0. Sugiero corregir la cifra en la síntesis para que el texto coincida con la
-tabla.
