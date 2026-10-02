@@ -18,20 +18,20 @@ Disparidad en el volumen de sanciones: Existe una fuerte concentración de proce
 
 Divergencia entre Promedio y Mediana: En todas las regiones, el promedio es sustancialmente superior a la mediana. Por ejemplo, en la Región de Atacama la mediana es de solo 6,40, mientras que el promedio alcanza 846,25 debido a multas puntuales extremadamente altas (máximo de 14.745,0).   
 
-Magnitud de las mayores multas: Regiones con actividad minera o industrial intensiva (como Atacama, Antofagasta, Los Lagos, Biobío y Valparaíso) registran montos máximos que superan las 7.000 a 14.000 unidades, mientras que regiones como Los Ríos, Ñuble y La Araucanía mantienen sus valores máximos por debajo de 810.
+Magnitud de las mayores multas: Algunas regiones presentan valores máximos considerablemente elevados, destacando Atacama y Antofagasta, entre otras, debido a la presencia de casos extremos dentro de sus distribuciones.
 
 ## Consideración sobre el tamaño de los grupos
 
 El tamaño de la muestra (cantidad de procedimientos) varía de forma considerable entre regiones, lo que exige precaución en la interpretación:
 
-La Región Metropolitana cuenta con una muestra robusta (324 casos), lo que otorga mayor estabilidad a sus estimaciones.
+La Región Metropolitana cuenta con una cantidad de 324 procedimientos, lo que otorga mayor estabilidad a sus estimaciones.
 
 Regiones con conteos reducidos, como Magallanes (17) o Arica y Parinacota (23), son altamente sensibles a la presencia de outliers (valores atípicos). En estos grupos pequeños, una sola multa de valor extremadamente alto distorsiona el promedio regional de forma desproporcionada, provocando que no represente la sanción típica de la zona.   
 
 
 ## Interpretación
 
-El análisis indica que la distribución de los montos de las multas ambientales presenta una fuerte asimetría a la derecha (positiva) en todas las regiones. La gran mayoría de los procedimientos resultan en sanciones de valores bajos a moderados como lo demuestran las medianas bajas (2,30 a 17,15) y el tercer cuartil ($Q_3$) que raras veces supera los 70. Sin embargo, la presencia esporádica de multas de cuantía muy elevada infla de manera importante los promedios calculados. Por lo tanto, la mediana y el rango intercuartílico ($Q_3 - Q_1$) resultan métricas mucho más representativas del comportamiento habitual de las sanciones en cada región que el promedio aritmético.
+El análisis indica que la distribución de los montos de las multas ambientales presenta una fuerte asimetría a la derecha (positiva) en todas las regiones. Las medianas regionales se mantienen entre 2,30 y 17,15 UTA, mientras que la presencia de valores extremos eleva considerablemente los promedios en algunas regiones. Sin embargo, la presencia esporádica de multas  muy elevadas infla de manera importante los promedios calculados. Por lo tanto, la mediana y el rango intercuartílico ($Q_3 - Q_1$) resultan métricas mucho más representativas del comportamiento habitual de las sanciones en cada región que el promedio aritmético.
 
 ## Limitación
 
