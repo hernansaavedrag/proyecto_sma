@@ -22,7 +22,7 @@ Magnitud de las mayores multas: Algunas regiones presentan valores máximos cons
 
 ## Consideración sobre el tamaño de los grupos
 
-El tamaño de la muestra (cantidad de procedimientos) varía de forma considerable entre regiones, lo que exige precaución en la interpretación:
+La cantidad de procedimientos varía de forma considerable entre regiones, lo que exige precaución en la interpretación:
 
 La Región Metropolitana cuenta con una cantidad de 324 procedimientos, lo que otorga mayor estabilidad a sus estimaciones.
 
@@ -31,7 +31,7 @@ Regiones con conteos reducidos, como Magallanes (17) o Arica y Parinacota (23), 
 
 ## Interpretación
 
-El análisis indica que la distribución de los montos de las multas ambientales presenta una fuerte asimetría a la derecha (positiva) en todas las regiones. Las medianas regionales se mantienen entre 2,30 y 17,15 UTA, mientras que la presencia de valores extremos eleva considerablemente los promedios en algunas regiones. Sin embargo, la presencia esporádica de multas  muy elevadas infla de manera importante los promedios calculados. Por lo tanto, la mediana y el rango intercuartílico ($Q_3 - Q_1$) resultan métricas mucho más representativas del comportamiento habitual de las sanciones en cada región que el promedio aritmético.
+El análisis indica que la distribución de los montos de las multas ambientales presenta una fuerte asimetría a la derecha (positiva) en todas las regiones. Las medianas regionales se mantienen entre 2,30 y 17,15 UTA, mientras que la presencia de valores extremos eleva considerablemente los promedios en algunas regiones. Por lo tanto, la mediana y el rango intercuartílico ($Q_3-Q_1$) resultan métricas más representativas del comportamiento habitual de las sanciones en cada región que el promedio aritmético
 
 ## Limitación
 
