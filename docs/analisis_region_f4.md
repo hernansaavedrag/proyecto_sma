@@ -2,7 +2,7 @@
 
 ## Resultado observado
 
-Se analiza la distribución de la multa (MultaTotalUTA) Según región.
+Se analiza la distribución de las multas (MultaTotalUTA) según región.
 El resultado que se obtiene es la agrupación de las regiones, el count que refleja la cantidad de veces que se repite la región, la mediana por región, promedio por región, mínimo y máximo de la multa por región, se muestra el percentil 25 y el percentil 75 sobre el monto de las multas.
 
 Cantidad de procedimientos: La Región Metropolitana concentra, por mucho, el mayor volumen con 324 casos, mientras que las demás regiones varían entre 17 (Magallanes) y 63 (La Araucanía).   
@@ -31,7 +31,7 @@ Regiones con conteos reducidos, como Magallanes (17) o Arica y Parinacota (23), 
 
 ## Interpretación
 
-El análisis indica que la distribución de los montos de las multas ambientales presenta una fuerte asimetría a la derecha (positiva) en todas las regiones. Las medianas regionales se mantienen entre 2,30 y 17,15 UTA, mientras que la presencia de valores extremos eleva considerablemente los promedios en algunas regiones. Por lo tanto, la mediana y el rango intercuartílico ($Q_3-Q_1$) resultan métricas más representativas del comportamiento habitual de las sanciones en cada región que el promedio aritmético
+El análisis indica que la distribución de los montos de las multas ambientales presenta una fuerte asimetría a la derecha (positiva) en todas las regiones. Las medianas regionales se mantienen entre 2,30 y 17,15 UTA, mientras que la presencia de valores extremos eleva considerablemente los promedios en algunas regiones. Por lo tanto, la mediana y el rango intercuartílico ($Q_3-Q_1$) resultan métricas más representativas del comportamiento habitual de las sanciones en cada región que el promedio aritmético.
 
 ## Limitación
 
